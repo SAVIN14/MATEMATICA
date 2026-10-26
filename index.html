@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Plataforma educacional de Matemática do Ensino Médio — Professor Sávio Mendes">
+  <title>Matemática — Ensino Médio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="icon" href="logo.png">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <script>
+    window.MathJax = { tex: { inlineMath: [['\\(','\\)']], displayMath: [['\\[','\\]']] }, svg: { fontCache: 'global' } };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-svg.js"></script>
+</head>
+<body>
+  <div class="loader" id="loader" role="status" aria-live="polite">
+    <div class="loader-box"><img src="logo.png" alt="Logo do CETI Helvídio Nunes de São José do Piauí"></div>
+    <div class="loader-bar" aria-hidden="true"><i></i></div>
+    <p>Carregando plataforma…</p>
+  </div>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand">
+        <div class="brand-mark">∑</div>
+        <div><strong>MATEMÁTICA</strong><span>Ensino Médio</span></div>
+      </div>
+      <button class="close-menu" id="closeMenu" aria-label="Fechar menu">×</button>
+      <nav class="nav">
+        <button class="nav-item active" data-view="home">⌂ <span>Início</span></button>
+        <button class="nav-item" data-view="logic">◈ <span>Desafio de Lógica</span></button>
+        <button class="nav-item" data-view="year1">▂ <span>Iniciante</span></button>
+        <button class="nav-item" data-view="year2">▄ <span>Intermediário</span></button>
+        <button class="nav-item" data-view="year3">▆ <span>Avançado</span></button>
+        <button class="nav-item" data-view="simulado">✓ <span>Simulado</span></button>
+        <button class="nav-item" data-view="progress">◔ <span>Meu Progresso</span></button>
+        <button class="nav-item" data-view="settings">⚙ <span>Configurações</span></button>
+      </nav>
+      <div class="sidebar-foot">
+        <div class="teacher-mini"><span>Professor</span><strong>Sávio Mendes</strong></div>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="menu-btn" id="menuBtn" aria-label="Abrir menu">☰</button>
+        <div class="search-wrap">
+          <span>⌕</span><input id="searchInput" type="search" placeholder="O que você quer estudar?" aria-label="Pesquisar conteúdo">
+          <div id="searchResults" class="search-results"></div>
+        </div>
+        <div class="top-actions">
+          <button class="icon-btn" id="themeBtn" aria-label="Alternar tema">☼</button>
+          <div class="score-pill">★ <span id="topScore">0</span> pts</div>
+        </div>
+      </header>
+
+      <div id="app"></div>
+    </main>
+  </div>
+
+  <div class="overlay" id="overlay"></div>
+  <div class="toast" id="toast"></div>
+
+  <script src="script.js"></script>
+</body>
+</html>
